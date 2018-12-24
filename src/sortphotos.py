@@ -374,7 +374,7 @@ def sortPhotos(src_dir, dest_dir, sort_format, rename_format, recursive=False,
             filename = date.strftime(rename_format) + ext.lower()
 
         # setup destination file
-        dest_file = os.path.join(dest_file, filename.encode('utf-8'))
+        dest_file = os.path.join(dest_file, str(filename.encode('utf-8'))[2: -1:])
         root, ext = os.path.splitext(dest_file)
 
         if verbose:
